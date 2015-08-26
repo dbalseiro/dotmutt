@@ -1,0 +1,71 @@
+set mbox_type = Maildir
+set from = "diego.balseiro@syntagma.com.ar"
+set realname = "Diego F. Balseiro"
+set folder = "~/.mail/syntagma"
+set spoolfile = "+INBOX"
+set postponed = "+Borradores"
+unset record
+set sendmail = "/usr/local/bin/msmtp -a diegobalseiro"
+set sendmail_wait = 0
+set delete # no confirm
+unset confirmappend #no confirm
+set quit # no confirm
+unset mark_old # read/new flags only
+auto_view text/html
+
+# Mailboxes to show in the sidebar.
+mailboxes +INBOX \
+          +IO\
+          +PAD\
+          +Adecco\
+          +TenesLugar\
+          +CirculoMB\
+          +SOFTTEK\
+          +Asana\
+          +Notificaciones\
+          +Destacados\
+          +"PARA GUARDAR"\
+          +Foros\
+          +Social\
+          +Promociones\
+          +"San Agustin"\
+          +Papelera\
+          +Enviados\
+          +temporary/search\
+          +Todos\
+          +Spam
+
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
+set signature        = ~/.mutt/sig
+set &charset ?charset
+set charset="utf-8"
+
+unset move               # gmail does that
+set beep_new             # bell on new mails
+set pipe_decode          # strip headers and eval mimes when piping
+set thorough_search      # strip headers and eval mimes before searching
+
+set uncollapse_jump                        # don't collapse on an unread message
+set sort_re                                # thread based on regex
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+folder-hook "." set sort=date-sent
+folder-hook "INBOX" set sort = threads                         # like gmail
+folder-hook "INBOX" set sort_aux = reverse-last-date-received  # like gmail
+folder-hook "INBOX" "exec collapse-all"
+
+bind index <right> collapse-thread
+bind index <left> collapse-all
+source ~/.mutt/includes/index-view.muttrc
+source ~/.mutt/includes/pager-view.muttrc
+source ~/.mutt/includes/compose-view.muttrc
+source ~/.mutt/includes/header.muttrc
+source ~/.mutt/includes/sidebar.muttrc
+source ~/.mutt/includes/status-bar.muttrc
+source ~/.mutt/includes/address-book.muttrc
+source ~/.mutt/includes/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/includes/macros.muttrc
+

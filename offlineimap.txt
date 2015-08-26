@@ -1,0 +1,11 @@
+To get started, copy one of these configurations to ~/.offlineimaprc:
+* minimal configuration:
+    cp -n /usr/local/etc/offlineimap.conf.minimal ~/.offlineimaprc
+
+* advanced configuration:
+    cp -n /usr/local/etc/offlineimap.conf ~/.offlineimaprc
+
+To have launchd start offline-imap at login:
+    ln -sfv /usr/local/opt/offline-imap/*.plist ~/Library/LaunchAgents
+Then to load offline-imap now:
+    launchctl load ~/Library/LaunchAgents/homebrew.mxcl.offline-imap.plist

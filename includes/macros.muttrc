@@ -1,0 +1,19 @@
+
+# macros
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index D "<save-message>+Papelera<enter>" "move message to Trash"
+macro index 0 "<save-message>+Spam<enter>" "move message to Spam"
+macro index R "WN" "Mark message as read"
+macro index \Cd "T.<enter><tag-prefix>d" "delete all messages"
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+macro index * "F<save-message>+Destacados<enter>" "Add Star"
+macro index _ "W!" "Clear Star"
+macro index,pager a "<pipe-message>~/.mutt/addContactMutt.sh<return>" "add sender to google contacts"
+macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py ~/.mail/syntagma/temporary/search<enter><change-folder-readonly>+temporary/search<enter>" "search mail (using notmuch)"
+macro index,pager i "<change-folder>+INBOX<enter>"
+macro index A "<change-folder>+Todos<enter>\Cri" "Mark Todos as read"
+macro index ) "<change-folder>+Spam<enter>\Cdi" "Delete All Spam"
+macro index \` "<shell-escape>offlineimap -o<enter>"
+

@@ -1,0 +1,5 @@
+
+# Index View Options ---------------------------------
+set date_format = "%b %d %H:%M"
+set index_format = "[%Z]  %D  %-20.20F  %s"
+

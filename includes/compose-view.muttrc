@@ -1,0 +1,10 @@
+# Compose View Options -------------------------------
+set realname = "Diego Balseiro"      # who am i?
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set attribution = "El %d, %n escribio:" # format of quoting header
+unset mime_forward                   # forward attachments as part of body
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+set edit_headers                     # show headers when composing
+set editor = "vim +9"
+set fcc_attach
