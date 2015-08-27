@@ -1,5 +1,5 @@
 [general]
-ui = TTY.TTYUI
+ui = ttyui
 accounts = dbalseiro
 pythonfile = ~/.mutt/offlineimap.py
 fsync = False
@@ -13,29 +13,19 @@ postsynchook = notmuch new
 [Repository dbalseiro-local]
 type = Maildir
 localfolders = ~/.mail/syntagma
-nametrans = lambda folder: {
-    'drafts':   '[Gmail]/Drafts',
-    'sent':     '[Gmail]/Sent Mail',
-    'flagged':  '[Gmail]/Starred',
-    'trash':    '[Gmail]/Trash',
-    'archive':  '[Gmail]/All Mail',
-}.get(folder, folder)
+nametrans = get_remote_name
 
 [Repository dbalseiro-remote]
 maxconnections = 1
 type = Gmail
 remoteuser = diego.balseiro@syntagma.com.ar
 remotepasseval = get_keychain_pass(account="diego.balseiro@syntagma.com.ar", server="imap.gmail.com")
-nametrans = lambda folder: {
-    '[Gmail]/Drafts':       'drafts',
-    '[Gmail]/Sent Mail':    'sent',
-    '[Gmail]/Starred':      'flagged',
-    '[Gmail]/Trash':        'trash',
-    '[Gmail]/All Mail':     'archive',
-}.get(folder, folder)
+nametrans = get_local_name
 
 folderfilter = lambda folder: folder not in [
-    '[Gmail]/Spam',
-]
+        '[Gmail]/Spam',
+        '[Gmail]/Notes',
+        '[Gmail]/Importantes',
+    ]
 
-
+sslcacertfile = /usr/local/etc/openssl/cert.pem

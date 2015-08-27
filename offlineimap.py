@@ -14,3 +14,10 @@ def get_keychain_pass(account=None, server=None):
     outtext = [l for l in output.splitlines() if l.startswith("password: ")][0]
     return re.match(r'password: "(.*)"', outtext).group(1)
 
+def get_local_name(folder):
+    return folder.replace("[Gmail]/", "")
+
+def get_remote_name(folder):
+    return "[Gmail]/" + folder
+
+
