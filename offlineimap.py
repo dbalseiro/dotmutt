@@ -9,9 +9,8 @@ def get_keychain_pass(account=None, server=None):
             'server': server,
             'keychain': '/Users/diego/Library/Keychains/login.keychain'
     }
-    command = "sudo -u diego $(security)s -v %(command)s -g -a %(account)s -s %(server)s %(keychain)s" % params
+    command = "%(security)s -v %(command)s -g -a %(account)s -s %(server)s %(keychain)s" % params
     output = subprocess.check_output(command, shell = True, stderr = subprocess.STDOUT)
+    outtext = [l for l in output.splitlines() if l.startswith("password: ")][0]
+    return re.match(r'password: "(.*)"', outtext).group(1)
 
-    return output
-
-print get_keychain_pass('diego.balseiro@syntagma.com.ar', 'imap.gmail.com')
