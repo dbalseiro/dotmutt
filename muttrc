@@ -32,8 +32,7 @@ mailboxes +INBOX \
           +Papelera\
           +Enviados\
           +temporary/search\
-          +Todos\
-          +Spam
+          +Todos
 
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
