@@ -35,6 +35,7 @@ class Mutt < Formula
   conflicts_with "tin",
     :because => "both install mmdf.5 and mbox.5 man pages"
 
+  # [Diego] Agrego opcion --with-sidebar-patch
   option "with-sidebar-patch", "apply sidebar patch"
   option "with-debug", "Build with debug option enabled"
   option "with-trash-patch", "Apply trash folder patch"
@@ -51,6 +52,7 @@ class Mutt < Formula
   depends_on "s-lang" => :optional
   depends_on "gpgme" => :optional
 
+  # [Diego] aca se aplica la opcion de sidebar patch
   patch do
     url "https://raw.github.com/nedos/mutt-sidebar-patch/7ba0d8db829fe54c4940a7471ac2ebc2283ecb15/mutt-sidebar.patch"
     sha1 "1e151d4ff3ce83d635cf794acf0c781e1b748ff1"
