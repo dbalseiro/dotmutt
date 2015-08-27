@@ -1,3 +1,10 @@
 brew install offlineimap
 brew install mutt --with-sidebar-patch
 brew install lynx
+brew install msmtp
+brew install notmuch
+
+
+offlineimap -o
+notmuch setup
+notmuch new

@@ -1,0 +1,32 @@
+#!/bin/bash
+set -e
+
+function my_open() {
+    NEWFILE=~/Downloads/$(basename $1)
+    mv $1 $NEWFILE
+    $2 $NEWFILE
+}
+
+if [ -z $1 ]; then
+    echo "Usage $0 <filename>"
+    exit 1
+fi
+
+if [ -z $2 ]; then
+    if [ -f $1 ]; then
+        my_open $1 open
+    else
+        echo "$1 does not exist"
+        exit 1
+    fi
+else
+    echo $2
+    case $2 in
+        html)
+            my_open $1 lynx
+            ;;
+        *)
+            my_open $1 open
+            ;;
+    esac
+fi
