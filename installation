@@ -9,3 +9,5 @@ brew linkapps terminal-notifier
 offlineimap -o
 notmuch setup
 notmuch new
+
+brew install urlview
