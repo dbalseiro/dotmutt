@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+result=$(notmuch new)
+case "$result"
+    "*No new mail*")
+        echo $result
+        ;;
+    "*")
+        count=$(notmuch count tag:unread and folder:INBOX)
+        if [ $count -ne 0 ]
+            terminal-notifier -message "You have $count new messages" -subtitle "New Mail" -contentImage ~/.mutt/mutt-white.png
+        fi
+        ;;
+esac
