@@ -13,7 +13,13 @@ postsynchook = notmuch new
 [Repository dbalseiro-local]
 type = Maildir
 localfolders = ~/.mail/syntagma
-nametrans = get_remote_name
+nametrans = lambda folder: {
+        'Todos': '[Gmail]/Todos',
+        'Destacados': '[Gmail]/Destacados',
+        'Enviados':'[Gmail]/Enviados',
+        'Borradores':'[Gmail]/Borradores',
+        'Papelera':'[Gmail]/Papelera',
+    }.get(folder, folder)
 
 [Repository dbalseiro-remote]
 maxconnections = 1

@@ -7,9 +7,9 @@ case "$result"
         echo $result
         ;;
     "*")
-        count=$(notmuch count tag:unread and folder:INBOX)
+        count=$(notmuch count tag:unread)
         if [ $count -ne 0 ]
-            terminal-notifier -message "You have $count new messages" -subtitle "New Mail" -contentImage ~/.mutt/mutt-white.png
+            terminal-notifier -message "You have mail!" -subtitle "$count new messages" -contentImage ~/.mutt/mutt-white.png
         fi
         ;;
 esac

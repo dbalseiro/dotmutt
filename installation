@@ -3,7 +3,8 @@ brew install mutt --with-sidebar-patch
 brew install lynx
 brew install msmtp
 brew install notmuch
-
+brew install terminal-notifier
+brew linkapps terminal-notifier
 
 offlineimap -o
 notmuch setup

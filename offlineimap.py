@@ -17,7 +17,3 @@ def get_keychain_pass(account=None, server=None):
 def get_local_name(folder):
     return folder.replace("[Gmail]/", "")
 
-def get_remote_name(folder):
-    return "[Gmail]/" + folder
-
-
