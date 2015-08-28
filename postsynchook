@@ -1,15 +1,12 @@
 #!/bin/bash
 set -e
 
-result=$(notmuch new)
-case "$result"
-    "*No new mail*")
-        echo $result
-        ;;
-    "*")
-        count=$(notmuch count tag:unread)
-        if [ $count -ne 0 ]
-            terminal-notifier -message "You have mail!" -subtitle "$count new messages" -contentImage ~/.mutt/mutt-white.png
-        fi
-        ;;
-esac
+result=`notmuch new`
+echo $result
+if [ "$result" != "No new mail." ]; then
+    count=`notmuch count tag:unread and folder:INBOX`
+    echo $count
+    if [ $count -ne 0 ]; then
+        terminal-notifier -subtitle "You have mail!" -message "$count new messages" -contentImage ~/.mutt/mutt-white.png
+    fi
+fi

@@ -30,7 +30,6 @@ mailboxes +INBOX \
           +Promociones\
           +"San Agustin"\
           +Papelera\
-          +Enviados\
           +temporary/search
 
 set header_cache = ~/.mutt/cache/headers
