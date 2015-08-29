@@ -30,8 +30,8 @@ mailboxes +INBOX \
           +Promociones\
           +"San Agustin"\
           +Papelera\
-          +temporary/search
-
+          +temporary/search\
+          +Todos
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
