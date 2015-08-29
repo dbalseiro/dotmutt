@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+SEARCHTEXT=$@
+TRIMMED=${SEARCHTEXT%% }
+echo
+
+~/.mutt/contacts.applescript "$TRIMMED" 2>&1
+
+
