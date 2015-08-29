@@ -36,6 +36,7 @@ function parseName() {
 
 function nameOk() {
     if [ "$NAME" == "" ]; then
+        echo $EMAIL > /dev/tty
         askValues
     else
         printValues
