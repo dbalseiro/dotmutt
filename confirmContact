@@ -1,0 +1,98 @@
+#!/bin/bash
+set -e
+
+NAME=$1
+EMAIL=$2
+FIRSTNAME=
+LASTNAME=
+LABEL="Work"
+
+function main() {
+    parseName
+    nameOk
+    ~/.mutt/addContact.applescript "$FIRSTNAME" "$LASTNAME" "$EMAIL" "$LABEL"
+}
+
+function parseName() {
+    IFS=" " read -a names <<< "$NAME"
+    case ${#names[@]} in
+        "1")
+            FIRSTNAME=$NAME
+            ;;
+        "2")
+            FIRSTNAME=${names[0]}
+            LASTNAME=${names[1]}
+            ;;
+        "3")
+            FIRSTNAME="${names[0]} ${names[1]}"
+            LASTNAME=${names[2]}
+            ;;
+        "4")
+            FIRSTNAME="${names[0]} ${names[1]}"
+            LASTNAME="${names[2]} ${names[3]}"
+            ;;
+    esac
+}
+
+function nameOk() {
+    if [ "$NAME" == "" ]; then
+        askValues
+    else
+        printValues
+        askOk || askValues
+    fi
+}
+
+function printValues() {
+    echo "First Name: $FIRSTNAME" > /dev/tty
+    echo "Last Name: $LASTNAME" > /dev/tty
+    echo "email: $EMAIL ($LABEL)" > /dev/tty
+    echo > /dev/tty
+}
+
+function askOk() {
+    R="#"
+    while ! [[ "$R" =~ ^[YyNn] || "$R" == "" ]]; do
+        echo -n "OK? [Y/n]: " > /dev/tty
+        read R < /dev/tty
+    done
+    if [[ "$R" =~ ^[nN] ]]; then
+        return 1
+    fi
+    return 0
+}
+
+function askValues() {
+    RESULT=
+    ask "First Name" "$FIRSTNAME" && FIRSTNAME=$RESULT
+    ask "Last Name" "$LASTNAME" && LASTNAME=$RESULT
+    ask "Email" "$EMAIL" && EMAIL=$RESULT
+    askLabel
+    echo > /dev/tty
+    printValues
+}
+
+function askLabel() {
+    R="#"
+    while ! [[ "$R" =~ ^[HhWw] || "$R" == "" ]]; do
+        echo -n "Work/Home? [W/h]: " > /dev/tty
+        read R < /dev/tty
+    done
+    if [[ "$R" =~ ^[hH] ]]; then
+        LABEL="Home"
+    else
+        LABEL="Work"
+    fi
+}
+
+function ask() {
+    echo -n "$1 ($2): " > /dev/tty
+    read R < /dev/tty
+    if [ "$R" == "" ]; then
+        RESULT=$2
+    else
+        RESULT=$R
+    fi
+}
+
+main
