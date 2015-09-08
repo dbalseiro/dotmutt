@@ -1,0 +1,2 @@
+- hacer una macro para actualizar solo una carpeta
+- por que no se actualiza TODOS ni BORRADORES??
