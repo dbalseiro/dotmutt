@@ -12,6 +12,7 @@ unset confirmappend #no confirm
 set quit # no confirm
 unset mark_old # read/new flags only
 auto_view text/html
+set askcc = yes
 
 # Mailboxes to show in the sidebar.
 mailboxes +INBOX \
