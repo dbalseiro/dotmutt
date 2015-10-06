@@ -13,6 +13,7 @@ set quit # no confirm
 unset mark_old # read/new flags only
 auto_view text/html
 set askcc = yes
+set sleep_time=0
 
 # Mailboxes to show in the sidebar.
 mailboxes +INBOX \
@@ -33,6 +34,7 @@ mailboxes +INBOX \
           +Papelera\
           +temporary/search\
           +Todos
+
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates

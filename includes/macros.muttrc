@@ -15,5 +15,5 @@ macro index S "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py
 macro index,pager i "<change-folder>+INBOX<enter>"
 macro index A "<change-folder>+Todos<enter>\Cri" "Mark Todos as read"
 macro index ) "<change-folder>+Spam<enter>\Cdi" "Delete All Spam"
-macro index \` "<shell-escape>offlineimap -o<enter>"
+macro index \` "<shell-escape>offlineimap -u quiet<enter>"
 

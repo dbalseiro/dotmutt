@@ -13,12 +13,13 @@ postsynchook = ~/.mutt/postsynchook
 [Repository dbalseiro-local]
 type = Maildir
 localfolders = ~/.mail/syntagma
-nametrans = lambda folder: {
-        'Todos': '[Gmail]/Todos',
-        'Destacados': '[Gmail]/Destacados',
-        'Enviados':'[Gmail]/Enviados',
-        'Borradores':'[Gmail]/Borradores',
-        'Papelera':'[Gmail]/Papelera',
+nametrans = lambda folder : {
+        'Borradores' :  '[Gmail]/Borradores',
+        'Enviados' :    '[Gmail]/Enviados',
+        'Destacados' :  '[Gmail]/Destacados',
+        'Papelera' :    '[Gmail]/Papelera',
+        'Spam' :        '[Gmail]/Spam',
+        'Todos' :       '[Gmail]/Todos',
     }.get(folder, folder)
 
 [Repository dbalseiro-remote]
@@ -26,12 +27,16 @@ maxconnections = 1
 type = Gmail
 remoteuser = diego.balseiro@syntagma.com.ar
 remotepasseval = get_keychain_pass(account="diego.balseiro@syntagma.com.ar", server="imap.gmail.com")
-nametrans = get_local_name
-
-folderfilter = lambda folder: folder not in [
-        '[Gmail]/Spam',
-        '[Gmail]/Notes',
-        '[Gmail]/Importantes',
-    ]
-
+nametrans = lambda folder : {
+        '[Gmail]/Borradores' :  'Borradores',
+        '[Gmail]/Enviados' :    'Enviados',
+        '[Gmail]/Destacados' :  'Destacados',
+        '[Gmail]/Papelera' :    'Papelera',
+        '[Gmail]/Spam' :        'Spam',
+        '[Gmail]/Todos' :       'Todos'
+     }.get(folder, folder)
+folderfilter = lambda folder : folder not in [
+        '[Gmail]/Trash',
+        '[Gmail]/Spam'
+    ]   
 sslcacertfile = /usr/local/etc/openssl/cert.pem
