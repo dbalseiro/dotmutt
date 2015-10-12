@@ -66,6 +66,8 @@ source ~/.mutt/includes/header.muttrc
 source ~/.mutt/includes/sidebar.muttrc
 source ~/.mutt/includes/status-bar.muttrc
 source ~/.mutt/includes/address-book.muttrc
+#source ~/.mutt/includes/mutt-colors-wombat.muttrc
+#source ~/.mutt/includes/mutt-colors-basic.muttrc
 source ~/.mutt/includes/mutt-colors-solarized-dark-16.muttrc
 source ~/.mutt/includes/macros.muttrc
 
