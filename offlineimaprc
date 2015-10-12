@@ -39,4 +39,5 @@ folderfilter = lambda folder : folder not in [
         '[Gmail]/Trash',
         '[Gmail]/Spam'
     ]   
+
 sslcacertfile = /usr/local/etc/openssl/cert.pem
