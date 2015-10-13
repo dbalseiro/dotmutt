@@ -52,6 +52,8 @@ set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
 
+set print=yes
+
 folder-hook "." set sort=date-sent
 folder-hook "INBOX" set sort = threads                         # like gmail
 folder-hook "INBOX" set sort_aux = reverse-last-date-received  # like gmail
