@@ -1,4 +1,5 @@
 application/*; mutt-open '%s'; print=mutt-print '%s'  
 image/*; mutt-open '%s'
-text/html; mutt-open %s html; nametemplate=%s.html
+text/html; mutt-open %s html; nametemplate=%s.html; print=mutt-print '%s'
 text/html; lynx -dump %s; nametemplate=%s.html; copiousoutput
+text/*; mutt-print '%s'; print=mutt-print '%s'
