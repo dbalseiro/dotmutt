@@ -69,12 +69,12 @@ color index         brightred             default         "~N~F"                
 color index         brightred             default         "~N~F~p"                    # new flagged messages to me
 color index         brightred             default         "~U~F~p"                    # new flagged messages to me
 color index         black           red             "~D"                        # deleted messages
-color index         cyan      default         "~v~(!~N)"                  # collapsed thread with no unread
+color index         brightwhite      default         "~v~(!~N)"                  # collapsed thread with no unread
 color index         brightcyan         default         "~v~(~N)"                   # collapsed thread with some unread
 #color index         green           default         "~N~v~(~N)"                 # collapsed thread with unread parent
 # statusbg used to indicated flagged when foreground color shows other status
 # for collapsed thread
-color index         red             black           "~v~(~F)!~N"                # collapsed thread with flagged, no unread
+color index         brightred             black           "~v~(~F)!~N"                # collapsed thread with flagged, no unread
 #color index         yellow          black           "~v~(~F~N)"                 # collapsed thread with some unread & flagged
 #color index         green           black           "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
 #color index         green           black           "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
