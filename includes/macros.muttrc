@@ -16,4 +16,4 @@ macro index,pager i "<change-folder>+INBOX<enter>"
 macro index A "<change-folder>+Todos<enter>\Cri" "Mark Todos as read"
 macro index ) "<change-folder>+Spam<enter>\Cdi" "Delete All Spam"
 macro index \` "<shell-escape>offlineimap -u quiet<enter>"
-
+macro index \Cm "<tag>~f mantisqa@buenosaires.gob.ar<enter><tag-prefix>d" "delete info"
