@@ -1,7 +1,8 @@
 #! /usr/bin/osascript
 on run (arguments)
     set l to {}
-    tell application "Contacts"
+    tell application "Address Book"
+        run
         repeat with p in people
             if name of p contains (first item of arguments) then 
                 repeat with e in (get value of emails of p)

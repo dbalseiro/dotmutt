@@ -33,7 +33,7 @@ mailboxes +INBOX \
           +"San Agustin"\
           +Papelera\
           +temporary/search\
-          +Todos
+          +Enviados\
 
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
