@@ -34,6 +34,7 @@ mailboxes +INBOX \
           +Papelera\
           +temporary/search\
           +Enviados\
+          +Todos\
 
 set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
@@ -58,6 +59,8 @@ folder-hook "." set sort=date-sent
 folder-hook "INBOX" set sort = threads                         # like gmail
 folder-hook "INBOX" set sort_aux = reverse-last-date-received  # like gmail
 folder-hook "INBOX" "exec collapse-all"
+
+set trash = "+Papelera"
 
 bind index <right> collapse-thread
 bind index <left> collapse-all

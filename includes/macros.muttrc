@@ -15,5 +15,5 @@ macro index,pager S "<enter-command>unset wait_key<enter><shell-escape>mutt-notm
 macro index,pager i "<change-folder>+INBOX<enter>"
 macro index,pager A "<change-folder>+Todos<enter>\Cri" "Mark Todos as read"
 macro index,pager ) "<change-folder>+Spam<enter>\Cdi" "Delete All Spam"
-macro index,pager \` "<shell-escape>offlineimap -u quiet<enter>"
+macro index,pager \` "<shell-escape>offlineimap<enter>"
 macro index \Cm "<tag>~f mantisqa@buenosaires.gob.ar<enter><tag-prefix>d" "delete info"
