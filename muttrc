@@ -60,7 +60,10 @@ folder-hook "INBOX" set sort = threads                         # like gmail
 folder-hook "INBOX" set sort_aux = reverse-last-date-received  # like gmail
 folder-hook "INBOX" "exec collapse-all"
 
-set trash = "+Papelera"
+folder-hook . set trash = "+Papelera"
+folder-hook "INBOX" unset trash
+#folder-hook "Todos" unset trash
+#unset trash
 
 bind index <right> collapse-thread
 bind index <left> collapse-all
