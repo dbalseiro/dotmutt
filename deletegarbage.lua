@@ -36,8 +36,12 @@ garbage =   account['[Gmail]/Todos']:contain_from('@recode.net') +
             account['[Gmail]/Todos']:contain_from('@lucidchart.com') +
             account['[Gmail]/Todos']:contain_from('American Express') +
             account['[Gmail]/Todos']:contain_from('@mblox.com') +
+            account['[Gmail]/Todos']:contain_from('@coderwall.com') +
+            account['[Gmail]/Todos']:contain_from('@logentries.com') +
+            account['[Gmail]/Todos']:contain_from('@mongolab.com') +
+            account['[Gmail]/Todos']:contain_from('openshift-email@redhat.com') +
             account['[Gmail]/Todos']:contain_from('@capacitarteuba.org') +
             account['[Gmail]/Todos']:contain_from('@codenvy.com') +
             account['[Gmail]/Todos']:contain_to('x@mail.asana.com')
-            account['[Gmail]/Todos']:contain_subject('Inscripcion en Linea - ')
+            account['[Gmail]/Todos']:match_subject('Inscripci.n en L.nea - ')
 account['[Gmail]/Todos']:delete_messages(garbage)
