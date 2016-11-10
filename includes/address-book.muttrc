@@ -3,4 +3,3 @@
 set query_command="mutt-contacts '%s'"
 bind editor <Tab> complete-query
 bind editor ^T    complete
-
