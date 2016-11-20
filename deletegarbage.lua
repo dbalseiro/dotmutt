@@ -53,4 +53,4 @@ account['[Gmail]/Todos']:move_messages(account['[Gmail]/Papelera'], garbage)
 
 garbage2 = account['[Gmail]/Enviados']:contain_to('diego.balseiro@syntagma.com.ar')
 
-account['[Gmail]/Todos']:move_messages(account['[Gmail]/Papelera'], garbage2)
+account['[Gmail]/Enviados']:move_messages(account['[Gmail]/Papelera'], garbage2)
