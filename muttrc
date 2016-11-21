@@ -83,4 +83,4 @@ source ~/.mutt/includes/macros.muttrc
 # Status Bar (from Steve Losh)
 set status_chars  = " *%A"
 # No idea what most of this is
-set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]———%>—%?p?( %p postponed )?———"
