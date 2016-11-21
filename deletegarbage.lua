@@ -43,6 +43,7 @@ garbage =   account['[Gmail]/Todos']:contain_from('@recode.net') +
             account['[Gmail]/Todos']:contain_from('openshift-email@redhat.com') +
             account['[Gmail]/Todos']:contain_from('@capacitarteuba.org') +
             account['[Gmail]/Todos']:contain_from('@codenvy.com') +
+            account['[Gmail]/Todos']:contain_from('VirtualPBX@ip-tel.com.ar') +
             account['[Gmail]/Todos']:contain_to('x@mail.asana.com') +
             account['[Gmail]/Todos']:contain_to('sonia.abregu@syntagma.com.ar') +
             account['[Gmail]/Todos']:contain_to('tomas.aguirre@syntagma.com.ar') +
