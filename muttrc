@@ -19,10 +19,8 @@ set sleep_time=0
 mailboxes +INBOX \
           +IO\
           +PAD\
-          +Adecco\
           +TenesLugar\
           +CirculoMB\
-          +SOFTTEK\
           +Misc\
           +Asana\
           +Notificaciones\
