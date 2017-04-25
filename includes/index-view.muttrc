@@ -3,3 +3,5 @@
 set date_format = "%b %d %H:%M"
 set index_format = " [%Z]  %D  %-20.20F  %s"
 
+# Query View Options ---------------------------------
+set query_format = "%-60.60n %a"
