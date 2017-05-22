@@ -3,10 +3,4 @@
 SEARCHTEXT=$@
 TRIMMED=${SEARCHTEXT%% }
 echo
-~/.mutt/contacts.applescript "$TRIMMED" 2>/tmp/err
-if [ $? -ne 0 ]; then
-    ERROR=$(cat /tmp/err)
-    echo ${ERROR##*:} | #muestro el ultimo token separado por ":"
-    sed "s/\(.*\)(\(.*\))/\1<\2>/g"
-fi
-
+~/.mutt/contacts.applescript "$TRIMMED" 2>&1
